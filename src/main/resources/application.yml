@@ -2,4 +2,10 @@ management:
   endpoints:
     web:
       exposure:
-        include: ['env', 'refresh'] # endpoint, ex) http://localhost:9265/actuator/refresh
+        include: "*"  # rabbitmq, ex) http://localhost:9265/actuator/bus-refresh (POST)
+#        include: ['env', 'refresh'] # endpoint, ex) http://localhost:9265/actuator/refresh
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
